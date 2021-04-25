@@ -1,4 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
+
+
+
+
 
 public class Question5
 {
@@ -27,6 +34,37 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
+    System.out.print("Enter number: ");
+    int limit = in.nextInt();
+    ArrayList<Integer> numberList = new ArrayList<>();
+    
+  
+    int num = 0;
+    int count = 0;
+    int tries = 0;
+    while (tries < limit){
+      System.out.print("Enter Number: ");
+      int number = in.nextInt();
+      numberList.add(number);
+      tries++;
+    }
+    
+    for(int check = 0; check < numberList.size()  ; check++){
+      int cknum = numberList.get(check);
+      int ckcount = 0;
+      for(int check2 = 0; check2 < numberList.size(); check2++){
+        if(numberList.get(check2) == cknum){
+          ckcount++;
+        }
+      }
+      if(ckcount > count){
+        num = cknum;
+        count = ckcount;
+      }
+      
+    }
+    System.out.println(num);
+    
     
   }
 }
